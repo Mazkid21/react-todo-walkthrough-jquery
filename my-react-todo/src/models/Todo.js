@@ -3,42 +3,38 @@ import $ from 'jquery'
 class TodoModel {
 	static all(){
 		let request = $.ajax({
-			url: "https://super-crud.herokuapp.com/todos",
-			method: 'GET'
+			url:"https://super-crud.herokuapp.com/todos",
+			method:'GET'
 		})
-
 		return request
 	}
-
-	static create(todo) {
+	static create(todo){
 		let request = $.ajax({
 			url: "https://super-crud.herokuapp.com/todos",
-			method: 'POST',
-			data: todo
+		    method: 'POST',
+		    data: todo
 		})
-
-		return request 
+		return request
 	}
-
 	static delete(todo){
-  		let request = $.ajax({
-    		url: `https://super-crud.herokuapp.com/todos/${todo._id}`,
-    		method: 'DELETE'
- 		})
-  		return request
+		 let request = $.ajax({
+		    url: "https://super-crud.herokuapp.com/todos/"+todo._id,
+		    method: 'DELETE'
+		  })
+		  return request
 	}
- 
 	static update(todo){
-		let request = $.ajax({
-			url: "https://super-crud.herokuapp.com/todos/"+todo._id,
-			method: 'PUT',
-			date: {
-				_id: todo.id,
-				body: todo.body
-			}
-		})
-		return request 
-	}	
+		 let request = $.ajax({
+		    url: "https://super-crud.herokuapp.com/todos/"+todo._id,
+		    method: 'PUT',
+		    data: {
+		    	_id : todo.id,
+		    	body: todo.body
+		    }
+		  })
+		  return request
+	}
 }
 
-export default TodoModel     
+export default TodoModel
+  

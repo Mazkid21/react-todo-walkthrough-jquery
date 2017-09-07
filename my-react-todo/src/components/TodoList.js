@@ -2,14 +2,15 @@ import React, {Component} from 'react'
 import Todo from './Todo'
 
 class TodoList extends Component {
-   render(){
+  render(){
     let todoArray = this.props.todos.map( (todo) => {
       return (
-        <Todo 
+        <Todo
           key={todo._id}
           todo={todo}
-          onDeleteTodo={this.props.onDeleteTodo}
-          onUpdateTodo={this.props.onUpdateTodo} />
+          onDeleteTodo={this.props.onDeleteTodo} 
+          onUpdateTodo={this.props.onUpdateTodo}/>
+
       )
     })
     return(
@@ -20,4 +21,4 @@ class TodoList extends Component {
   }
 }
 
-export default TodoList 
+export default TodoList

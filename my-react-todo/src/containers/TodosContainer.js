@@ -1,4 +1,3 @@
-
 import React, {Component} from 'react'
 import TodoModel from '../models/Todo'
 import TodoList from '../components/TodoList'
